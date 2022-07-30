@@ -1,0 +1,50 @@
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th scope="col">keyId</th>
+            <th scope="col">KeyName</th>
+            <th scope="col">Aliases</th>
+            <th scope="col">Status</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Secret Key</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let key of keysList">
+            <td>{{key.keyId}}</td>
+            <td>{{key.keyName}}</td>
+            <td>{{key.keyAliase}}</td>
+            <td>{{key.keyStatus}}</td>
+            <td>{{key.createdDate}}</td>
+            <td>{{key.secretKey}}</td>
+            <td>
+                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteKey(key.keyId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    ADD CRYPTOKEY
+  </button>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-info">
+          <h5 class="modal-title text-light" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <app-add-key-form (submitEvent)="handleSubmitEvent($event)"></app-add-key-form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
