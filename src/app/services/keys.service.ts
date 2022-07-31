@@ -9,7 +9,7 @@ import { GenerateKeyDto } from '../dtos/generate-key-dto';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    //Authorization: 'my-auth-token'
+    //Bearer: 'my-auth-token'
   })
 };
 
