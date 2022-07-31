@@ -10,6 +10,9 @@ import { AddKeyFormComponent } from './components/add-key-form/add-key-form.comp
 
 import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +22,12 @@ import { ReactiveFormsModule , FormsModule } from '@angular/forms';
     AddKeyFormComponent
   ],
   imports: [
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
